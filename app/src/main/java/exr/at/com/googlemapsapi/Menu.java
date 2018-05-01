@@ -14,18 +14,12 @@ import exr.at.com.googlemapsapi.R;
 
 public class Menu extends Activity {
 
-    CheckBox food;
-    CheckBox outdoors;
-    CheckBox entertainment;
-    CheckBox relaxation;
     RadioGroup distances;
-    RadioGroup categories;
     final double METERS_TO_MILE = 1609.344;
 
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState );
         setContentView(R.layout.menu);
-        categories = (RadioGroup) findViewById(R.id.categoryGroup);
         distances = (RadioGroup) findViewById(R.id.distanceGroup);
     }
 
@@ -34,7 +28,6 @@ public class Menu extends Activity {
         Intent places = new Intent(this, MainActivity.class);
         getDistanceRadioValue(distances);
         places.putExtra("radius", getDistanceRadioValue(distances));
-        places.putExtra("type", getCategoryRadioValue(categories));
         startActivity(places);
     }
 
@@ -56,7 +49,7 @@ public class Menu extends Activity {
         }
     }
 
-    public String getCategoryRadioValue(RadioGroup rg) {
+    /*public String getCategoryRadioValue(RadioGroup rg) {
         int radioId = rg.indexOfChild(rg.findViewById(rg.getCheckedRadioButtonId()));
         RadioButton button = (RadioButton) rg.getChildAt(radioId);
         String selection = (String) button.getText();
@@ -72,6 +65,6 @@ public class Menu extends Activity {
         else {
             return "cafe";
         }
-    }
+    }*/
 
 }

@@ -28,7 +28,8 @@
             android:text="Choose from the categories below before we specially pick your self date!"
             android:textSize="14sp" />
 
-        <TextView
+
+        <!--<TextView
             android:id="@+id/categoryHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,7 +39,7 @@
             android:layout_marginRight="10sp"
             android:text="Categories:" />
 
-        <RadioGroup
+
             android:id="@+id/categoryGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,13 +83,13 @@
                 android:layout_marginLeft="10sp"
                 android:layout_marginRight="10sp"
                 android:text="Relaxation" />
-        </RadioGroup>
+        </RadioGroup>-->
 
         <TextView
             android:id="@+id/distanceHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/categoryGroup"
+            android:layout_below="@+id/description"
             android:layout_marginBottom="10sp"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="10sp"

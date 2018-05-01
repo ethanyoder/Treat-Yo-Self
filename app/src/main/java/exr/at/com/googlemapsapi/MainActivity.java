@@ -53,7 +53,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     double latitude;
     double longitude;
     private double proximityRadius;
-    private String chosenType;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker;
@@ -67,11 +66,9 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             proximityRadius = extras.getDouble("radius");
-            chosenType = extras.getString("type");
         }
         else {
             proximityRadius = 10000;
-            chosenType = "park";
         }
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -92,7 +89,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        build_retrofit_and_get_response(chosenType);
     }
 
     private boolean isGooglePlayServicesAvailable() {
@@ -133,7 +129,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
-        Log.d("CategoryChosen", chosenType);
 
         Button btnRestaurant = (Button) findViewById(R.id.btnRestaurant);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
